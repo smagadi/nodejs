@@ -1,0 +1,71 @@
+Start our server 
+	node server.js 
+
+
+Use google chrome rest 
+Test 1:
+Without any token, let us fire a request to get all the products
+http://localhost:3000/api/v1/admin/users
+
+
+Response 
+
+{
+status: 401
+message: "Invalid Token or Key"
+}
+
+
+Test 2 POST
+
+http://localhost:3000/login
+
+username :sudhi@myapp.com
+password :Any 
+Set "Content-Type" to x-www-form-urlencoded
+
+Response 
+
+{
+token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0MzAwNDE2NjkzMzB9.9EMIO44KujfZzqZmS-714QN7ty12cQfkyc4vnoBFDCo"
+expires: 1430041669330
+user: {
+name: "sudhi"
+role: "user"
+username: "sudhi@myapp.com"
+}-
+}
+
+
+Test 3 GET 
+http://localhost:3000/api/v1/products
+
+Add Header 
+x-access-token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0MzAwNDE2NjkzMzB9.9EMIO44KujfZzqZmS-714QN7ty12cQfkyc4vnoBFDCo
+x-key:sudhi@myapp.com
+Content-Type:application/json
+
+TEST 4 GET , 
+
+http://localhost:3000/api/v1/admin/users
+Add Header 
+x-access-token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0MzAwNDM5MjMwOTR9.O-6wLZhwM1r3HWQcYNCtZb2kGTKN71waWGlPclVdCPE
+x-key:sudhi@myapp.com
+Content-Type:application/json
+
+Response
+IF admin 
+
+3]
+0:  {
+name: "user 1"
+id: "1"
+}-
+1:  {
+name: "user 2"
+id: "2"
+}-
+2:  {
+name: "user 3"
+id: "3"
+}

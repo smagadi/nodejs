@@ -44,7 +44,7 @@ var auth = {
     // spoofing the DB response for simplicity
     var dbUserObj = { // spoofing a userobject from the DB. 
       name: 'sudhi',
-      role: 'user',
+      role: 'admin',
       username: 'sudhi@myapp.com'
     };
  
@@ -55,7 +55,7 @@ var auth = {
     // spoofing the DB response for simplicity
     var dbUserObj = { // spoofing a userobject from the DB. 
       name: 'sudhi',
-      role: 'user',
+      role: 'admin',
       username: 'sudhi@myapp.com'
     };
  
